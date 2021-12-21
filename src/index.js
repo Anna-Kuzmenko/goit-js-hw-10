@@ -33,7 +33,9 @@ function renderCountryInfo(countries) {
 
 function renderCountriesMarkap(countries) {
     countries.map(({ name, flags }) => {
-            const listItem = `<li class ="country-list__item"><img class = "flag" src="${flags.svg}" alt="flag" width="60" height="30"></img>${name.official}</li>`;
+        const listItem = `<li class ="country-list__item">
+            <img class = "flag" src="${flags.svg}" alt="flag" width="60" height="30">
+            </img>${name.official}</li>`;
             countryList.insertAdjacentHTML('beforeend', listItem);
         });
 };
@@ -44,10 +46,12 @@ function renderCountryMarkap(countries) {
             Object.values(languages).forEach(language => {
                 langs.push(language);
             });
-            const country = `<h2 class = "title"><img class = "flag" src="${flags.svg}" alt="flag" width="60" height="30"></img>${name.official}</h2>
-      <h3>Capital : <span class = "text">${capital}</span></h3>
-      <h3>Population : <span class = "text">${population}</span></h3>
-      <h3>Languages : <span class = "text">${langs}</span></h3>`;
+        const country = `<h2>
+            <img class = "flag" src="${flags.svg}" alt="flag" width="60" height="30">
+            </img>${name.official}</h2>
+      <h3>Capital : ${capital}</h3>
+      <h3>Population : ${population}</h3>
+      <h3>Languages : ${langs}</h3>`;
             countryInfo.insertAdjacentHTML('beforeend', country);
         });
 };
